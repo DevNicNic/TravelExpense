@@ -1,10 +1,10 @@
 package com.nicnicdev.gastoviagem
 
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.View
 import android.view.View.OnClickListener
 import android.widget.Toast
+import androidx.appcompat.app.AppCompatActivity
 import com.nicnicdev.gastoviagem.databinding.ActivityMainBinding
 
 class MainActivity : AppCompatActivity(), OnClickListener {
@@ -37,14 +37,10 @@ class MainActivity : AppCompatActivity(), OnClickListener {
             val distance = binding.editDistance.text.toString().toFloat()
             val price = binding.editPrice.text.toString().toFloat()
             val autonomy = binding.editAutonomy.text.toString().toFloat()
-
-            val totalValeu = (distance * price) / autonomy
-            binding.textTotalValue.text = "R$ ${"%.2f".format(totalValeu)}"
+            val totalValue = (distance * price) / autonomy
+            binding.textTotalValue.text = "R$ ${"%.2f".format(totalValue)}"
         } else {
             Toast.makeText(this, R.string.validation_fill_all_fields, Toast.LENGTH_SHORT).show()
-
         }
-
-
     }
 }
